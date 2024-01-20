@@ -19,12 +19,13 @@ namespace AplicativoGenerico.Classes.Temas.ManipulaçãoStrings
                var previous = braces;
                braces =  Regex.Replace(braces, pattern, replacement);
 
+               if (previous == braces) { return false; }
+
                if (string.IsNullOrEmpty(braces))
                 {                    
                     return true;
                 }  
                
-               if(previous == braces) { return false; }
             }
              return false;
         }
